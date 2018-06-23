@@ -56,5 +56,11 @@
             </plugin>
         </plugins>
     </build>
+    
+    <scm>
+		<url>https://github.com/khalidid/spring-boot/tree/master/complete</url>
+		<connection>scm:git:git://github.com/khalidid/spring-boot/tree/master/complete.git</connection>
+		<developerConnection>scm:git:git@github.com:khalidid/spring-boot/tree/master/complete.git</developerConnection>
+</scm>
 
 </project>
