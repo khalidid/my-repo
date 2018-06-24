@@ -5,6 +5,10 @@ pipeline {
             steps {
                 echo 'Hello world!' 
             }
+        }stage('Checkout code') {
+           steps {
+            checkout scm
         }
+    }
     }
 }

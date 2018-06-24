@@ -56,5 +56,9 @@
             </plugin>
         </plugins>
     </build>
-
+<scm>
+		<url>https://github.com/khalidid/my-repo</url>
+		<connection>scm:git:git://github.com/khalidid/my-repo.git</connection>
+		<developerConnection>scm:git:git@github.com/khalidid/my-repo.git</developerConnection>
+</scm>
 </project>
