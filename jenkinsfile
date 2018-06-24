@@ -6,19 +6,19 @@ pipeline {
                 echo 'Hello world!' 
             }
         }
-        stage('Checkout external proj') {
-        steps {
-            git branch: 'master',
-                credentialsId: 'khalidid',
-                url: 'ssh://git@github.com/khalidid/my-repo.git'
-
-            sh "ls -lat"
+        
+        stage("build") {
+          steps {
+        // create a directory called "tmp" and cd into that directory
+        dir("tmp") {
+          // use git to retrieve the plugin-pom
+          git changelog: false, poll: false, url: 'git://github.com/khalidid/my-repo.git', branch: 'master'
+          sh 'echo "M2_HOME: ${M2_HOME}"'
+          sh 'echo "JAVA_HOME: ${JAVA_HOME}"'
+          sh 'mvn clean verify -Dmaven.test.failure.ignore=true'
         }
-    }
-        stage('Checkout code') {
-           steps {
-            checkout scm
-        }
-    }
+      }
+}
+        
     }
 }
